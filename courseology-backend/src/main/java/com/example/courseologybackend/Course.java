@@ -1,6 +1,16 @@
 package com.example.courseologybackend;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Course {
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
     private String title;
     private String instructor;
@@ -13,6 +23,9 @@ public class Course {
         this.instructor = instructor;
         this.price = price;
         this.category = category;
+    }
+
+    public Course() {
     }
 
     public String getId() {
@@ -33,5 +46,25 @@ public class Course {
 
     public String getCategory() {
         return category;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
