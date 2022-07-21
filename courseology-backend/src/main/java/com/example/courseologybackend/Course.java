@@ -14,10 +14,10 @@ public class Course {
     private String id;
     private String title;
     private String instructor;
-    private double price;
+    private String price;
     private String category;
 
-    public Course(String id, String title, String instructor, double price, String category) {
+    public Course(String id, String title, String instructor, String price, String category) {
         this.id = id;
         this.title = title;
         this.instructor = instructor;
@@ -40,7 +40,7 @@ public class Course {
         return instructor;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
@@ -60,7 +60,7 @@ public class Course {
         this.instructor = instructor;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

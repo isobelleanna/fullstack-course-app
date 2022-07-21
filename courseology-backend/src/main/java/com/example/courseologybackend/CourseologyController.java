@@ -5,12 +5,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 public class CourseologyController {
 
     @Autowired
     CourseologyRepository courseologyRepository;
+
+    @Autowired
+    CourseologyService courseologyService;
 
     @ExceptionHandler
     public ResponseEntity<String> handle(Exception exception){
@@ -23,8 +28,11 @@ public class CourseologyController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Created with id :" + course.getId());
     }
 
-//    @GetMapping("/courses")
-//    public
+    @GetMapping("/courses")
+    public ResponseEntity<List<Course>> getCourse(){
+        List<Course> course = courseologyRepository.findAll();
+        return ResponseEntity.status(HttpStatus.FOUND).body(course);
+    }
 
 
 }
