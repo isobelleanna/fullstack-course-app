@@ -3,6 +3,9 @@ package com.example.courseologybackend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class CourseologyService {
 
@@ -17,6 +20,20 @@ public class CourseologyService {
         return course;
     }
 
+    Course findRandomCourse(){
+        List<Course> courses = courseologyRepository.findAll();
+        return courses.get((int)Math.random()*courses.size());
+    }
 
+    void deleteCourseById(String id){
+        Course course = findCourseById(id);
+        courseologyRepository.deleteByid(id);
+    }
 
+    public List<String> extractCourseIds() {
+        List<Course> courses = courseologyRepository.findAll();
+        return courses.stream()
+                .map(Course :: getId)
+                .collect(Collectors.toList());
+    }
 }
