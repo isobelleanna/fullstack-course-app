@@ -10,12 +10,7 @@ const Form = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setCourse({
-      title: "Intro to Java",
-      instructor: "Bob",
-      price: 10.99,
-      category: "back-end",
-    });
+    let url = "http://localhost:8080/course";
   };
   console.log(course);
   return (
@@ -24,24 +19,34 @@ const Form = () => {
         <input
           type="text"
           placeholder="title"
-          onInput={(event) => console.log(event.target.value)}
+          onInput={(event) =>
+            setCourse({ ...course, title: event.target.value })
+          }
         />
         <input
           type="text"
           placeholder="instructor"
-          onInput={(event) => console.log(event.target.value)}
+          onInput={(event) =>
+            setCourse({ ...course, instructor: event.target.value })
+          }
         />
         <input
           type="text"
           placeholder="price"
-          onInput={(event) => console.log(event.target.value)}
+          onInput={(event) =>
+            setCourse({ ...course, price: event.target.value })
+          }
         />
         <input
           type="text"
           placeholder="category"
-          onInput={(event) => console.log(event.target.value)}
+          onInput={(event) =>
+            setCourse({ ...course, category: event.target.value })
+          }
         />
-        <input type="submit"></input>
+        <button type="submit" className="btn">
+          Submit
+        </button>
       </form>
     </div>
   );
