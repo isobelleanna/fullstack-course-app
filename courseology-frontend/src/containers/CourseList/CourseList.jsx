@@ -23,9 +23,8 @@ const CourseList = ({ courses }) => {
     <div>
       <Searchbox handleInput={handleSearchInput} searchTerm={searchTerm} />
       {filterBySearch.map((course, index) => (
-        <Link to={`/courses/${course.id}`}>
+        <Link to={`/courses/${course.id}`} key={index}>
           <Card
-            key={index}
             title={course.title}
             category={course.category}
             instructor={course.instructor}
