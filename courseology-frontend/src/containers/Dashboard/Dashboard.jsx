@@ -4,6 +4,7 @@ import Home from "../Home/Home";
 import CourseList from "../CourseList/CourseList";
 import Form from "../../components/Form/Form";
 import Nav from "../../components/Nav/Nav";
+import CourseInfo from "../CourseInfo/CourseInfo";
 
 const Dashboard = ({ courses }) => {
   console.log(courses);
@@ -13,6 +14,10 @@ const Dashboard = ({ courses }) => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<CourseList courses={courses} />} />
+        <Route
+          path="/courses/:courseid"
+          element={<CourseInfo courses={courses} />}
+        />
         <Route path="/update" element={<Form />} />
       </Routes>
     </Router>

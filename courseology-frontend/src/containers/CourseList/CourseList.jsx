@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "../../components/Card/Card";
 import Searchbox from "../../components/Searchbox/Searchbox";
+import { Link } from "react-router-dom";
 
 const CourseList = ({ courses }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,13 +23,15 @@ const CourseList = ({ courses }) => {
     <div>
       <Searchbox handleInput={handleSearchInput} searchTerm={searchTerm} />
       {filterBySearch.map((course, index) => (
-        <Card
-          key={index}
-          title={course.title}
-          category={course.category}
-          instructor={course.instructor}
-          price={course.price}
-        />
+        <Link to={`/courses/${course.id}`}>
+          <Card
+            key={index}
+            title={course.title}
+            category={course.category}
+            instructor={course.instructor}
+            price={course.price}
+          />
+        </Link>
       ))}
     </div>
   );
