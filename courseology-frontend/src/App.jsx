@@ -11,11 +11,11 @@ function App() {
     const data = await res.json();
     setCourses(data);
   };
+
   useEffect(() => {
     getCourses();
   }, []);
 
-  console.log(courses);
   return (
     <div className="app">
       <Dashboard courses={courses} />

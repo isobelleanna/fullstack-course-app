@@ -6,9 +6,6 @@ import { Link } from "react-router-dom";
 const CourseList = ({ courses }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  if (courses.length > 0) {
-    console.log(courses[0].title);
-  }
   const handleSearchInput = (event) => {
     const input = event.target.value.toLowerCase();
     setSearchTerm(input);

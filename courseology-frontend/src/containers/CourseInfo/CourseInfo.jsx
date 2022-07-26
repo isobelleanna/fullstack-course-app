@@ -3,10 +3,9 @@ import { useParams } from "react-router";
 
 const CourseInfo = ({ courses }) => {
   const { courseId } = useParams();
-  console.log(courseId);
+
   const filteredArray = courses.filter((course) => course.id === courseId);
-  //console.log(courses);
-  console.log(filteredArray);
+
   return (
     <div>
       <h1>{filteredArray[0].title}</h1>

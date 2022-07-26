@@ -7,10 +7,26 @@ const Form = () => {
     price: 10.99,
     category: "",
   });
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     let url = "http://localhost:8080/course";
+    try {
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(course),
+      });
+      setMessage("ok");
+    } catch (err) {
+      setMessage("Error");
+    }
+
+    event.target.reset();
   };
   console.log(course);
   return (
@@ -48,6 +64,7 @@ const Form = () => {
           Submit
         </button>
       </form>
+      <p>{message}</p>
     </div>
   );
 };
