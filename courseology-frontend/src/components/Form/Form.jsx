@@ -27,6 +27,7 @@ const Form = ({ courses }) => {
     const res = await fetch(url, { method: "DELETE" });
     const message = await res.text();
     setAlert(message);
+    window.location.reload();
   };
 
   const handleSubmit = (event) => {

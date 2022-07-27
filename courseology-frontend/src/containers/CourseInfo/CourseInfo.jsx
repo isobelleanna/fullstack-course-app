@@ -16,7 +16,7 @@ const CourseInfo = () => {
 
   useEffect(() => {
     getCourseById();
-  }, []);
+  });
 
   return (
     <div className="course-info">
