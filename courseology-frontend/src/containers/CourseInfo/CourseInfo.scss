@@ -7,6 +7,12 @@
     border: 1px solid $colour-border;
     font-size: 1em;
     margin: 1em 1em;
+    padding: 0.5em 1em;
+    &:hover {
+      background-color: $colour-button-background;
+      color: $colour-button-text;
+      border: 1px solid $colour-button-background;
+    }
   }
   &__main {
     display: flex;
@@ -23,5 +29,8 @@
     background-color: $colour-button-background;
     color: $colour-button-text;
     width: 400px;
+  }
+  &__title {
+    text-align: center;
   }
 }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4em;
+  margin: 4em 0;
   &__image {
     height: 550px;
     margin-right: 2em;
@@ -19,7 +19,7 @@
   }
   &__button {
     padding: 1em;
-    font-size: 2.5em;
+    font-size: 2.3em;
     background-color: $colour-button-background;
     color: $colour-button-text;
     border: none;
@@ -38,5 +38,6 @@
   &__course {
     color: $colour-font-main;
     font-size: 2em;
+    text-align: center;
   }
 }
