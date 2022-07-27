@@ -17,7 +17,7 @@ const Dashboard = ({ courses }) => {
           path="/courses/:courseId"
           element={<CourseInfo courses={courses} />}
         />
-        <Route path="/update" element={<Form />} />
+        <Route path="/update" element={<Form courses={courses} />} />
       </Routes>
     </Router>
   );

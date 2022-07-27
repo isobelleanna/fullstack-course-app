@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Form.scss";
 
-const Form = () => {
+const Form = ({ courses }) => {
   const [course, setCourse] = useState({
     title: "",
     instructor: "",
@@ -10,6 +10,24 @@ const Form = () => {
     category: "",
   });
   const [message, setMessage] = useState("");
+  const [alert, setAlert] = useState("");
+
+  const handleDeleteSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target[0].value);
+    const filteredCourse = courses.filter(
+      (course) => course.title === event.target[0].value
+    );
+    sendDeleteRequest(filteredCourse[0].id);
+    event.target.reset();
+  };
+
+  const sendDeleteRequest = async (id) => {
+    let url = `http://localhost:8080/course/${id}`;
+    const res = await fetch(url, { method: "DELETE" });
+    const message = await res.text();
+    setAlert(message);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -76,6 +94,27 @@ const Form = () => {
           Go to courses
         </Link>
         <p>{message}</p>
+      </div>
+      <div className="form-box">
+        <h2 className="form-title">Delete a Course</h2>
+        <form className="form" onSubmit={handleDeleteSubmit}>
+          <input
+            list="course-titles"
+            name="course-titles"
+            id="course-title"
+          ></input>
+          <datalist id="course-titles">
+            {courses.map((course, index) => (
+              <option key={index} id={course.id} name={course.title}>
+                {course.title}
+              </option>
+            ))}
+          </datalist>
+          <button type="submit" className="form__submit">
+            Submit
+          </button>
+        </form>
+        <p>{alert}</p>
       </div>
     </div>
   );
