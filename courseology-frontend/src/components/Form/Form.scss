@@ -1,0 +1,46 @@
+@use "../../assets/sass/variables" as *;
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6em;
+}
+.form-box {
+  border: 1px solid $colour-border;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-title {
+  margin: 1em;
+  color: $colour-font-headline;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__input {
+    margin: 2em 0;
+    padding: 0.5em 3em;
+    border: 1px solid $colour-font-headline;
+    text-align: left;
+  }
+  &__submit {
+    margin: 1em 1em;
+    background-color: $colour-button-background;
+    color: $colour-button-text;
+    border: none;
+    padding: 0.6em 1em;
+  }
+  &__link {
+    margin: 1em 1em;
+    color: $colour-font-main;
+  }
+}

@@ -1,0 +1,27 @@
+@use "../../assets/sass/variables" as *;
+
+.course-info {
+  margin: 1em 2em;
+  &__button {
+    background-color: $colour-main-background;
+    border: 1px solid $colour-border;
+    font-size: 1em;
+    margin: 1em 1em;
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4em 0;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $colour-button-background;
+    color: $colour-button-text;
+    width: 400px;
+  }
+}

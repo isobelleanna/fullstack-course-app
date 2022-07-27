@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import "./CourseInfo.scss";
 
 const CourseInfo = () => {
   const { courseId } = useParams();
@@ -18,14 +19,18 @@ const CourseInfo = () => {
   }, []);
 
   return (
-    <div>
+    <div className="course-info">
       <Link to="/courses">
-        <button>Back</button>
+        <button className="course-info__button">Back</button>
       </Link>
-      <h1>{course.title}</h1>
-      <h2>{course.category}</h2>
-      <h3>{course.instructor}</h3>
-      <p>{course.price}</p>
+      <div className="course-info__main">
+        <div className="course-info__content">
+          <h1 className="course-info__title">{course.title}</h1>
+          <h2 className="course-info__category">{course.category}</h2>
+          <h3 className="course-info__instructor">{course.instructor}</h3>
+          <p className="course-info__price">{course.price}</p>
+        </div>
+      </div>
     </div>
   );
 };

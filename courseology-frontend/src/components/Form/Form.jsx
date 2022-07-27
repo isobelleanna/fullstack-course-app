@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Form.scss";
 
 const Form = () => {
   const [course, setCourse] = useState({
@@ -31,43 +32,51 @@ const Form = () => {
   };
 
   return (
-    <div>
-      <h1>Add a new Course</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="title"
-          onInput={(event) =>
-            setCourse({ ...course, title: event.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="instructor"
-          onInput={(event) =>
-            setCourse({ ...course, instructor: event.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="price"
-          onInput={(event) =>
-            setCourse({ ...course, price: parseFloat(event.target.value) })
-          }
-        />
-        <input
-          type="text"
-          placeholder="category"
-          onInput={(event) =>
-            setCourse({ ...course, category: event.target.value })
-          }
-        />
-        <button type="submit" className="btn">
-          Submit
-        </button>
-      </form>
-      <Link to={`/courses`}>Go to courses</Link>
-      <p>{message}</p>
+    <div className="form-container">
+      <div className="form-box">
+        <h1 className="form-title">Add a new Course</h1>
+        <form className="form" onSubmit={handleSubmit}>
+          <input
+            className="form__input"
+            type="text"
+            placeholder="title"
+            onInput={(event) =>
+              setCourse({ ...course, title: event.target.value })
+            }
+          />
+          <input
+            className="form__input"
+            type="text"
+            placeholder="instructor"
+            onInput={(event) =>
+              setCourse({ ...course, instructor: event.target.value })
+            }
+          />
+          <input
+            className="form__input"
+            type="text"
+            placeholder="price"
+            onInput={(event) =>
+              setCourse({ ...course, price: parseFloat(event.target.value) })
+            }
+          />
+          <input
+            className="form__input"
+            type="text"
+            placeholder="category"
+            onInput={(event) =>
+              setCourse({ ...course, category: event.target.value })
+            }
+          />
+          <button type="submit" className="form__submit">
+            Submit
+          </button>
+        </form>
+        <Link className="form__link" to={`/courses`}>
+          Go to courses
+        </Link>
+        <p>{message}</p>
+      </div>
     </div>
   );
 };

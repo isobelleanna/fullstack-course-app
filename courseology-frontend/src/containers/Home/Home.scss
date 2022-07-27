@@ -1,0 +1,42 @@
+@use "../../assets/sass/variables" as *;
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4em;
+  &__image {
+    height: 550px;
+    margin-right: 2em;
+  }
+  &__content {
+    height: 510px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+  }
+  &__button {
+    padding: 1em;
+    font-size: 2.5em;
+    background-color: $colour-button-background;
+    color: $colour-button-text;
+    border: none;
+    border-radius: 20px;
+    margin-top: 1em;
+  }
+  &__title {
+    color: $colour-font-headline;
+    margin: 1em;
+    font-size: 3em;
+  }
+  &__subheading {
+    color: $colour-font-main;
+    font-size: 2em;
+  }
+  &__course {
+    color: $colour-font-main;
+    font-size: 2em;
+  }
+}
