@@ -9,7 +9,7 @@ const Form = () => {
   });
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     let url = "http://localhost:8080/course";
     try {
@@ -31,7 +31,8 @@ const Form = () => {
   console.log(course);
   return (
     <div>
-      <form onClick={handleSubmit}>
+      <h1>Add a new Course</h1>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="title"
@@ -50,7 +51,7 @@ const Form = () => {
           type="text"
           placeholder="price"
           onInput={(event) =>
-            setCourse({ ...course, price: event.target.value })
+            setCourse({ ...course, price: parseFloat(event.target.value) })
           }
         />
         <input
