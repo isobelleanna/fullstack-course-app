@@ -7,7 +7,6 @@ import Nav from "../../components/Nav/Nav";
 import CourseInfo from "../CourseInfo/CourseInfo";
 
 const Dashboard = ({ courses }) => {
-  console.log(courses);
   return (
     <Router>
       <Nav />

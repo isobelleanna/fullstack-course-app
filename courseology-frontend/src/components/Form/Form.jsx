@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   const [course, setCourse] = useState({
@@ -25,10 +26,9 @@ const Form = () => {
     } catch (err) {
       setMessage("Error");
     }
-
     event.target.reset();
   };
-  console.log(course);
+
   return (
     <div>
       <h1>Add a new Course</h1>
@@ -61,9 +61,11 @@ const Form = () => {
             setCourse({ ...course, category: event.target.value })
           }
         />
+        {/* <Link to="/courses/"> */}
         <button type="submit" className="btn">
           Submit
         </button>
+        {/* </Link> */}
       </form>
       <p>{message}</p>
     </div>
