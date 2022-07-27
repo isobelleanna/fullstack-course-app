@@ -1,0 +1,21 @@
+@use "../../assets/sass/variables" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $colour-main-background;
+  border: 1px solid $colour-border;
+  width: 200px;
+  height: 230px;
+  &__title {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0.5em;
+    color: $colour-font-headline;
+  }
+  &__price {
+    color: $colour-font-main;
+  }
+}

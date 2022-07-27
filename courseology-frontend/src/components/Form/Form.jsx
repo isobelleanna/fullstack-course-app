@@ -27,6 +27,7 @@ const Form = () => {
       setMessage("Error");
     }
     event.target.reset();
+    window.location.reload();
   };
 
   return (
@@ -61,12 +62,11 @@ const Form = () => {
             setCourse({ ...course, category: event.target.value })
           }
         />
-        {/* <Link to="/courses/"> */}
         <button type="submit" className="btn">
           Submit
         </button>
-        {/* </Link> */}
       </form>
+      <Link to={`/courses`}>Go to courses</Link>
       <p>{message}</p>
     </div>
   );

@@ -1,0 +1,21 @@
+@use "../../assets/sass/variables" as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 1em 2em;
+  &__item {
+    color: $colour-font-headline;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin: 0 1em;
+    border: 1px solid $colour-border;
+    padding: 0.2em 1em;
+    &:hover {
+      background-color: $colour-button-background;
+      color: $colour-button-text;
+      border: 1px solid $colour-button-background;
+    }
+  }
+}

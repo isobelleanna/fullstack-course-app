@@ -1,0 +1,8 @@
+@use "../../assets/sass/variables" as *;
+
+.search-box {
+  &__input {
+    padding: 1em;
+    width: 50%;
+  }
+}

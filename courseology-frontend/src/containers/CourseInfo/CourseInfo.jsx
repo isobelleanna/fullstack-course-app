@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-const CourseInfo = ({ courses }) => {
+const CourseInfo = () => {
   const { courseId } = useParams();
   const [course, setCourse] = useState({});
-
-  // const filteredArray = courses.filter((course) => course.id === courseId);
 
   const getCourseById = async () => {
     let url = `http://localhost:8080/course/${courseId}`;
