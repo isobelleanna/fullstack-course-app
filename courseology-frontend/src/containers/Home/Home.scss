@@ -6,12 +6,12 @@
   justify-content: center;
   margin: 4em 0;
   &__image {
-    height: 550px;
+    height: 35em;
     margin-right: 2em;
   }
   &__content {
-    height: 510px;
-    width: 400px;
+    height: 32em;
+    width: 29em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,5 +39,14 @@
     color: $colour-font-main;
     font-size: 2em;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home {
+    flex-direction: column;
+    &__image {
+      width: 95%;
+    }
   }
 }

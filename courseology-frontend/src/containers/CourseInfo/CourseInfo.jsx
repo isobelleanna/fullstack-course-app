@@ -28,7 +28,7 @@ const CourseInfo = () => {
           <h1 className="course-info__title">{course.title}</h1>
           <h2 className="course-info__category">{course.category}</h2>
           <h3 className="course-info__instructor">{course.instructor}</h3>
-          <p className="course-info__price">{course.price}</p>
+          <p className="course-info__price">£{course.price}</p>
         </div>
       </div>
     </div>
